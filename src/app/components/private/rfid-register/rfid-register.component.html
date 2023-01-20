@@ -1,0 +1,64 @@
+<div class="container">
+   <mat-toolbar-row>
+      <h1>Productos registrados</h1>
+   </mat-toolbar-row>
+
+   <app-loading-spinner *ngIf="loading"></app-loading-spinner>
+
+   <table *ngIf="!loading" mat-table matSort [dataSource]="dataSource" class="mat-elevation-z8">
+
+      <ng-container matColumnDef="code">
+         <th mat-header-cell *matHeaderCellDef> Nro.Serie </th>
+         <td mat-cell *matCellDef="let element"> {{element.code}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="model">
+         <th mat-header-cell *matHeaderCellDef> Modelo </th>
+         <td mat-cell *matCellDef="let element"> {{element.model}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="rfid">
+         <th mat-header-cell *matHeaderCellDef> RFID </th>
+         <td mat-cell *matCellDef="let element"> {{element.rfid}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="description">
+         <th mat-header-cell *matHeaderCellDef> Descripción </th>
+         <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="logo">
+         <th mat-header-cell *matHeaderCellDef> Cliente </th>
+         <td mat-cell *matCellDef="let element"> {{ element.logo}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="device">
+         <th mat-header-cell *matHeaderCellDef> Origen </th>
+         <td mat-cell *matCellDef="let element"> {{element.device | uppercase}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="antenna">
+         <th mat-header-cell *matHeaderCellDef> Antena </th>
+         <td mat-cell *matCellDef="let element"> {{element.antenna}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="status">
+         <th mat-header-cell *matHeaderCellDef> Estado </th>
+         <td mat-cell *matCellDef="let element">
+            <mat-icon class="alert-green" *ngIf="(element.status === 'success');" svgIcon="check_icon" aria-hidden="false" aria-label="Check Icon"></mat-icon>
+            <mat-icon class="alert-red" *ngIf="(element.status === 'not found');" svgIcon="close_icon" aria-hidden="false" aria-label="Close Icon"></mat-icon>
+         </td>
+      </ng-container>
+
+      <ng-container matColumnDef="createdAt">
+         <th mat-header-cell *matHeaderCellDef> Registro </th>
+         <td mat-cell *matCellDef="let element"> {{element.createdAt | momentFormat: 'DD/MM/YY hh:mm:ss a'}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+   </table>
+   <mat-paginator *ngIf="!loading" class="mat-elevation-z8" [pageSizeOptions]="[10, 30, 50]" showFirstLastButtons aria-label="Select page of periodic elements">
+   </mat-paginator>
+</div>
+

@@ -1,0 +1,33 @@
+<div mat-dialog-content>
+   <form [formGroup]="dataForm">
+      <mat-form-field class="full-w" appearance="outline">
+         <mat-label>Nombre</mat-label>
+         <input matInput placeholder="Nombre cliente" formControlName="name" />
+      </mat-form-field>
+
+      <mat-form-field class="full-w" appearance="outline">
+         <mat-label>Contacto</mat-label>
+         <input matInput placeholder="Nombre contacto" formControlName="contact" />
+      </mat-form-field>
+
+      <mat-form-field class="full-w" appearance="outline">
+         <mat-label>Teléfono</mat-label>
+         <input matInput placeholder="Teléfono cliente" formControlName="phoneNumber" />
+      </mat-form-field>
+
+      <mat-form-field class="full-w" appearance="outline">
+         <mat-label>RUT</mat-label>
+         <input matInput placeholder="RUT cliente" formControlName="rut" />
+      </mat-form-field>
+
+      <mat-form-field class="full-w" appearance="outline">
+         <mat-label>Dirección</mat-label>
+         <input matInput placeholder="Dirección cliente" formControlName="address" />
+      </mat-form-field>
+   </form>
+</div>
+<app-loading-spinner *ngIf="loading"></app-loading-spinner>
+<div *ngIf="!loading" mat-dialog-actions [align]="'end'">
+   <button mat-raised-button color="warn" mat-dialog-close="">Cerrar</button>
+   <button style="margin-left: 9px;" mat-raised-button color="primary" (click)="addItem()">{{actionBtn}}</button>
+</div>

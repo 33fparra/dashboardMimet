@@ -1,0 +1,49 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.container {
+   margin: 10px;
+}
+
+.full-w {
+   min-width: 100% !important;
+}
+
+.mt-1 {
+   margin-top: 5px !important;
+}
+
+.mt-2 {
+   margin-top: 10px !important;
+}
+
+.mt-3 {
+   margin-top: 15px !important;
+}
+
+.mt-4 {
+   margin-top: 20px !important;
+}
+
+.ml-auto {
+   margin-left: auto;
+}
+
+table {
+  width: 100%;
+}
+
+.manage-container {
+   margin: 20px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.spinner {
+   width: 100%;
+   text-align: center;
+}

@@ -1,0 +1,34 @@
+.alert-green {
+   color: green;
+}
+.alert-red {
+   color: red;
+}
+
+.mat-column-antenna {
+  width: 50px;
+  text-align: center;
+}
+
+.mat-column-logo {
+  width: 150px;
+  text-align: center;
+}
+
+.mat-column-description {
+  width: 400px;
+  text-align: center;
+}
+
+.mat-column-code {
+   font-size: 20px;
+}
+
+.mat-column-model {
+   font-size: 20px;
+}
+
+.mat-column-model .mat-column-code .mat-column-status {
+  text-align: center;
+}
+

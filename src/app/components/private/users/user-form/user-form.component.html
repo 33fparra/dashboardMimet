@@ -1,0 +1,42 @@
+<div mat-dialog-content>
+   <form [formGroup]="dataForm">
+      <mat-form-field class="full-w" appearance="outline">
+         <mat-label>Nombre Completo</mat-label>
+         <input matInput placeholder="Nombre completo" formControlName="fullname" />
+      </mat-form-field>
+
+      <mat-form-field class="full-w" appearance="outline">
+         <mat-label>Email</mat-label>
+         <input matInput placeholder="Email" formControlName="email" />
+      </mat-form-field>
+
+      <mat-form-field class="full-w" appearance="outline">
+         <mat-label>Contraseña</mat-label>
+         <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+         <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+         </button>
+      </mat-form-field>
+
+      <mat-form-field class="full-w" appearance="outline">
+         <mat-label>Role</mat-label>
+         <mat-select formControlName="role" placeholder="Role" (selectionChange)="onChange()">
+            <mat-option value="admin">Admin</mat-option>
+            <mat-option value="client">Cliente</mat-option>
+         </mat-select>
+      </mat-form-field>
+
+      <mat-form-field *ngIf="showClientList" class="full-w" appearance="outline">
+         <mat-label>Cliente</mat-label>
+         <mat-select formControlName="clientId" placeholder="Cliente">
+            <mat-option *ngFor="let item of clients" value="{{ item.id }}">{{ item.name }}</mat-option>
+         </mat-select>
+      </mat-form-field>
+   </form>
+</div>
+<app-loading-spinner *ngIf="loading"></app-loading-spinner>
+<div *ngIf="!loading" mat-dialog-actions [align]="'end'">
+   <button mat-raised-button color="warn" mat-dialog-close="">Cerrar</button>
+   <button style="margin-left: 9px;" mat-raised-button color="primary" (click)="addItem()">{{actionBtn}}</button>
+</div>

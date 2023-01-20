@@ -1,0 +1,44 @@
+.login-box {
+    background-color: blueviolet;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+   mat-card{
+       // background-color: white;
+       padding: 30px 15px;
+       text-align: center;
+   }
+   mat-card-title{
+       color: rgb(255, 255, 255);
+       margin-top: 25px !important;
+   }
+   mat-card-content{
+       padding: 0 25px;
+       margin-top: 25px;
+   }
+   mat-form-field{
+       color: rgb(105, 105, 105);
+       display:block;
+   }
+   button[type="submit"]{
+       color : white !important;
+       width: 100%;
+   }
+   mat-card-actions{
+       display: block;
+       margin: 0 auto;
+   }
+   .mat-button{
+       color : white !important;
+   }
+
+   .spinner{
+       margin: 0 auto;
+   }
+}
+

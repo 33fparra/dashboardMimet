@@ -1,0 +1,28 @@
+<mat-sidenav-container class="sidenav-container">
+   <mat-sidenav #drawer class="sidenav hide" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+      <mat-toolbar><img src="assets/images/logoWhite.png" alt="" height="25"></mat-toolbar>
+      <mat-nav-list>
+         <a mat-list-item routerLinkActive="active" [routerLink]="['/app/customers']">Clientes</a>
+         <a mat-list-item routerLinkActive="active" [routerLink]="['/app/brands']">Marcas</a>
+         <a mat-list-item routerLinkActive="active" [routerLink]="['/app/portics']">Porticos</a>
+         <a mat-list-item routerLinkActive="active" [routerLink]="['/app/rfids']">RFID</a>
+         <a mat-list-item routerLinkActive="active" [routerLink]="['/app/rfids-register']">Registros</a>
+         <a mat-list-item routerLinkActive="active" [routerLink]="['/app/cooler']">Coolers</a>
+         <a mat-list-item routerLinkActive="active" [routerLink]="['/app/users']">Usuarios</a>
+      </mat-nav-list>
+   </mat-sidenav>
+   <mat-sidenav-content>
+      <mat-toolbar color="primary">
+         <img src="assets/images/logoWhite.png" alt="" height="25">
+         <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+            *ngIf="isHandset$ | async">
+            <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+         </button>
+         <button class="logout" mat-raised-button (click)="logout()">
+            <mat-icon type="button">logout</mat-icon>
+         </button>
+      </mat-toolbar>
+      <router-outlet></router-outlet>
+   </mat-sidenav-content>
+</mat-sidenav-container>
