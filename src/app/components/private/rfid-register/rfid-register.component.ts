@@ -60,4 +60,6 @@ export class RfidRegisterComponent implements OnInit {
          this.loading = false;
       })
    }
+
+   
 }

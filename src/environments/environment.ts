@@ -1,6 +1,6 @@
 export const environment = {
    production: false,
-   apiUrl: 'http://localhost:5000/mimet-trigo/southamerica-east1',
+   apiUrl: 'https://southamerica-east1-mimet-trigo.cloudfunctions.net',
    tokenKey: 'access_token',
    expKey: 'expires_at',
    landingPageUrl: 'https://mimet-portales.web.app/',

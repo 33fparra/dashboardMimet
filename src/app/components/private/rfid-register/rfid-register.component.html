@@ -46,7 +46,8 @@
          <th mat-header-cell *matHeaderCellDef> Estado </th>
          <td mat-cell *matCellDef="let element">
             <mat-icon class="alert-green" *ngIf="(element.status === 'success');" svgIcon="check_icon" aria-hidden="false" aria-label="Check Icon"></mat-icon>
-            <mat-icon class="alert-red" *ngIf="(element.status === 'not found');" svgIcon="close_icon" aria-hidden="false" aria-label="Close Icon"></mat-icon>
+            <mat-icon class="alert-red" *ngIf="(element.status === 'not found');" svgIcon="close_icon" aria-hidden="false" aria-label="Close Icon"></mat-icon> 
+            <!-- lanzar la alamra -->
          </td>
       </ng-container>
 
