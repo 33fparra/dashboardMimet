@@ -10,7 +10,8 @@ import { Audio } from '../interfaces/audio.interface';
 export class AudioService {
 
   constructor() { }
-
+  
+  public let yaSonando = false;
 
   private stop$ = new Subject();
   private audioObj = new Audio();
@@ -87,5 +88,7 @@ export class AudioService {
     canplay: false,
     error: false,
   };
+
+
 
 }

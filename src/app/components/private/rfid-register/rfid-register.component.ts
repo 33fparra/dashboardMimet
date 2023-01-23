@@ -24,6 +24,7 @@ export class RfidRegisterComponent implements OnInit {
    public dataSource = new MatTableDataSource<IRfidRegister>();
    public loadingStatusIds: string[] = [];
    public loading = true;
+   
 
    displayedColumns: string[] = [
       'code',
@@ -52,7 +53,17 @@ export class RfidRegisterComponent implements OnInit {
 
    ngOnInit(): void {
       this.RfidRegisterList();
+           
+     // if ( Array.some( (element) => element.status==='not-found') ) { this.alarm(); }
+      
    }
+
+   // alarm(){
+   //    const audio = new Audio();
+   //    audio.src = '../../../assets/audio/alarma.mp3';
+   //    audio.load();
+   //    audio.play();
+   //  }
 
    public RfidRegisterList(): void {
       this.service.getItems().subscribe((res) => {

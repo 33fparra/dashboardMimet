@@ -47,7 +47,8 @@
          <td mat-cell *matCellDef="let element">
             <mat-icon class="alert-green" *ngIf="(element.status === 'success');" svgIcon="check_icon" aria-hidden="false" aria-label="Check Icon"></mat-icon>
             <mat-icon class="alert-red" *ngIf="(element.status === 'not found');" svgIcon="close_icon" aria-hidden="false" aria-label="Close Icon"></mat-icon> 
-            <!-- lanzar la alamra -->
+            <audio *ngIf="(element.status === 'not found');" controls src='../../../assets/audio/alarma.mp3' autoplay hidden type="audio/mp3">
+            </audio>
          </td>
       </ng-container>
 
